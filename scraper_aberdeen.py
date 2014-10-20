@@ -17,12 +17,12 @@ def scrape(url, year):
 	reqs = [{'doc': x.get('href', None), 'title': x.string.split(' - ')[1], 'iden': x.string.split(' - ')[0], 'type': x.string[0:3], 'date': dt.strptime(year, '%Y'), 'tags': tags} for x in soup.table.findAll('a')]
 	return reqs
 
-def im(reqs):
+def im(reqs, body_id):
 	session = get_session()
 	for req in reqs:
 		if len(session.query(Request).filter(
 				Request.body_req_id == req['iden']).all()) == 0:
-			r = Request(body = 1, # id for Aberdeen city
+			r = Request(body = body_id,
 				    body_req_id = req['iden'],
 				    title = req['title'],
 				    type = req['type'])
@@ -43,7 +43,7 @@ urls = ['http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_inform
 urls13 = ['http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/arts_and_leisure.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/bereavement.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/contracts_procurement.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/decisions-policies-plans.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/education_dl.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/environment_dl.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/financial_information_dl.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/housing_dl.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/it_communication.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/land_property_dl.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/legal_and_licensing.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/parking_dl.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/roads_and_transport.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/social_care_adults.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/social_care_children.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/social_care_elderly.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/social_care.asp', 'http://www.aberdeencity.gov.uk/council_government/dp_foi/freedom_information/disclosure_log/staffing.asp']
 
 for url in urls:
-	im(scrape(url, "2014"))
+	im(scrape(url, "2014"), 1) # should really lookup body_id
 
 
 # for url in urls13:

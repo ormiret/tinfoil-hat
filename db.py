@@ -38,12 +38,12 @@ class RequestTag(Base):
     tag = Column(String(20))
 
 def setup_db():
-    engine = create_engine(DB_CONN)
+    engine = create_engine(DB_CONN, encoding='utf-8')
     Base.metadata.create_all(engine)
     
 
 def get_session():
-    engine = create_engine(DB_CONN)
+    engine = create_engine(DB_CONN, encoding='utf-8')
     Base.metadata.bind = engine
     DBSession = sessionmaker()
     DBSession.bind = engine
