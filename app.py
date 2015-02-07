@@ -38,4 +38,4 @@ def search(query):
 def api_all():
     db = get_session()
     reqs = db.query(Request).all()
-    return jsonify(reqs)
+    return jsonify({'requests': [r.get_public() for r in reqs]})
