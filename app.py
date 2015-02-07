@@ -33,3 +33,9 @@ def search(query):
     query = '%{0}%'.format(query)
     reqs = db.query(Request).filter(Request.title.ilike(query))
     return render_template("requests.html", reqs=reqs)
+
+@app.route('/api/all')
+def api_all():
+    db = get_session()
+    reqs = db.query(Request).all()
+    return jsonify(reqs)
