@@ -6,13 +6,21 @@ parse_url = "https://api.textspark.io/v1/parse?user_key=%s"%TS_KEY
 
 def update(docs):
     for doc in docs:
-        pdf = request.get(doc.url).text
-        txt = json.loads(requests.put(parse_url, data=pdf).text)['content']
-        doc.text = txt
+        print "Processing document %d"%doc.id
+        pdf_resp = requests.get(doc.url)
+        resp = requests.put(parse_url, data=pdf_resp.content)
+        if resp.ok:
+            txt = json.loads(resp.text)['content']
+            doc.text = txt[:64000]
+        else:
+            print "Got %d from textspark."%resp.status_code
+            
+            doc.text = "borked"
 
         
 if __name__ == "__main__":
     db = get_session()
-    docs = db.query(Document).filter(Document.text == None).filter(Document.url != None)
-    update(docs)
-    db.commit()
+    while True:
+        docs = db.query(Document).filter(Document.text == None).filter(Document.url != None).all()[:20]
+        update(docs)
+        db.commit()
