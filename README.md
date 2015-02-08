@@ -14,7 +14,9 @@ Github repo https://github.com/ormiret/tinfoil-hat
 
 Local dev URL http://localhost/code/ctc3/tinfoil-hat/trunk/front-end
 
-
+Main Blue: #2095F2
+Main Orange: #FF5621
+Background: #FAFAFA 
 
 
 json endpoint: http://tinfoil.bodaegl.com/api/all
