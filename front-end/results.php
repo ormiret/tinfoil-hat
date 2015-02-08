@@ -76,7 +76,7 @@ print_common_header($app_title);
                   <td><?php echo $data_item->body_name ?></td>
                   <td><?php echo $data_item->body_req_id ?></td>
                   <td><?php echo $data_item->docs[0]->text_start ?></td>
-                  <td><?php echo $data_item->docs[0]->url ?></td>                  
+                  <td><img src="css/DOC_Icon.svg"<?php echo $data_item->docs[0]->url ?></td>                  
                   <td><?php echo $data_item->docs[0]->id ?></td>
                   </td>
                   <td><?php echo $data_item->id ?></td>
