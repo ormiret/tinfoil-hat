@@ -21,6 +21,6 @@ def update(docs):
 if __name__ == "__main__":
     db = get_session()
     while True:
-        docs = db.query(Document).filter(Document.text == None).filter(Document.url != None).all()[:20]
+        docs = db.query(Document).filter(Document.text == None).filter(Document.url != None).all()
         update(docs)
         db.commit()
