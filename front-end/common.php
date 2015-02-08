@@ -1,7 +1,7 @@
 <?php
 
 # generic common vars
-$app_title = "TinFOIlhat";
+$app_title = "TinFOIlhat - FOI FINDER";
 $long_app_title = "TinFOIlhat - Freedom of Information Search Engine";
 
 
