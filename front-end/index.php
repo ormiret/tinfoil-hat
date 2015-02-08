@@ -22,7 +22,7 @@ print_common_header($long_app_title);
           <input id="to_month" type="text" placeholder="MM"/> 
           <input id="to_year" type="text" placeholder="YYYY"/> 
            
-          <span aria-hidden="true" class="glyphicon glyphicon-search"></span>
+          <button class="glyphicon glyphicon-search"></button>
 
         </div>
         <div class="col-md-2"> </div>
