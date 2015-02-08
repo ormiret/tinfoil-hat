@@ -18,7 +18,7 @@ print_common_header($long_app_title);
             <input id="from_day" class="day" type="text" placeholder="DD"/> 
             <input id="from_month" class="month" type="text" placeholder="MM"/> 
             <input id="from_year" class="year" type="text" placeholder="YYYY"/> 
-            -
+            <span class="date_hyphen">-</span>
             <input id="to_day" class="day" type="text" placeholder="DD"/> 
             <input id="to_month" class="month" type="text" placeholder="MM"/> 
             <input id="to_year" class="year" type="text" placeholder="YYYY"/> 

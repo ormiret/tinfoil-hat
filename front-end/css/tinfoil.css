@@ -123,16 +123,25 @@ h4 {
     border-width: 0px 0px 3px 0px;
     border-color: #FF5621;
     font-style: italic;
-    font-size: 28px;    
+    font-size: 32px;    
     margin-bottom: 30px;
+    width: 400px;
 
 }
-.tinfoilhat_search input.day,
+.tinfoilhat_search input.day{
+    width: 37px;
+    margin-right: 8px;
+}
 .tinfoilhat_search input.month{
     width: 50px;
+    margin-right: 8px;    
 }
 .tinfoilhat_search input.year{
-    width: 100px;
+    width: 70px;
+}
+.date_hyphen{
+    font-size: 32px;  
+    padding: 0 10px; 
 }
 
 .tinfoilhat_search button{
@@ -149,7 +158,7 @@ h4 {
     transition: background-color 0.5s ease;
 }
 .tinfoilhat_search button:hover{
-    background-color: #FF5621;
+    background-color: #0c46a0;
 }
 
 
