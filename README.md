@@ -6,9 +6,9 @@ Flask is used for the web bit and SQLAlchemy for the database interface.
 
 http://tinfoil.bodaegl.com
 
-
-
 Work done at http://codethecity.org/
+
+Github repo https://github.com/ormiret/tinfoil-hat
 
 ## Front End
 
