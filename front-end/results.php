@@ -5,12 +5,11 @@
 require_once('common.php');
 
 
+$query = $_GET["term"];
+$location = $_GET["location"];
 
-/*
-http://tinfoil.bodaegl.com/api/all
-*/
 
-$data_array = get_all_json_as_array();
+$data_array = get_results_json_as_array($query, $location);
 
 $title_count_array_trim = get_popular_words_as_array($data_array);
 
@@ -22,7 +21,7 @@ print_common_header($app_title);
 
 ?>
         <div class="col-sm-3 col-md-2 sidebar">
-          <h3 class="sub-header">Most Popular Words</h3>
+          <h3 class="sub-header">Most Popular Words in Results</h3>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
@@ -33,11 +32,11 @@ print_common_header($app_title);
               </thead>
               <tbody>        
               <?php
-              foreach ($title_count_array_trim as $title_text => $title_count) {
+              foreach ($title_count_array_trim as $word_text => $word_count) {
                 ?>
                 <tr>
-                  <td><?php echo $title_text; ?></td>
-                  <td><?php echo $title_count ?></td>  
+                  <td><?php echo $word_text; ?></td>
+                  <td><?php echo $word_count ?></td>  
                 </tr>                         
                 <?php
               }
@@ -47,9 +46,8 @@ print_common_header($app_title);
           </div>              
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header"><?php echo $title_text; ?> - All Results</h1>
+          <h1 class="page-header">Results for "<?php echo $query; ?>"</h1>
           
-          <h2 class="sub-header">Section title</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>

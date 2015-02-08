@@ -21,6 +21,21 @@ function get_all_json_as_array() {
 }
 
 
+# 
+function get_results_json_as_array($query, $location) {
+
+    # get the json
+    $json_data = file_get_contents ( "http://tinfoil.bodaegl.com/api/search?q=" . $query . "&l=" . $location);
+
+    # decode it
+    $data_array = json_decode( $json_data );
+
+    # pull out the child that has the data in it    
+    $data_array = $data_array->requests;
+
+    return $data_array;
+}
+
 
 #
 function get_popular_words_as_array($data_array) {
@@ -106,16 +121,17 @@ function print_common_header($app_title) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><?php echo $app_title?></a>
+          <a class="navbar-brand" href="<?php echo $_SERVER['REQUEST_URI'] ?>"><?php echo $app_title?></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="all.php">All Results</a></li>
             <li><a href="https://ico.org.uk/for-organisations/guide-to-freedom-of-information/what-is-the-foi-act/" target="_blank">FOI?</a></li>
             <li><a href="http://codethecity.org/" target="_blank">codethecity.org</a></li>
             <li><a href="https://github.com/ormiret/tinfoil-hat" target="_blank">On GitHub</a></li>
           </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
+          <form class="navbar-form navbar-right" action="results.php" method="get">
+            <input type="text" name="term" class="form-control" placeholder="Search...">
           </form>
         </div>
       </div>
