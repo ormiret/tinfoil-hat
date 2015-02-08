@@ -1,19 +1,16 @@
 <?php
 
+
+
+require_once('common.php');
+
 $app_title = "TinFOIlhat - Freedom of Information Search Engine";
 
 /*
 http://tinfoil.bodaegl.com/api/all
 */
 
-# get the json
-$json_data = file_get_contents ( "http://tinfoil.bodaegl.com/api/all" );
-
-# decode it
-$data_array = json_decode( $json_data );
-
-# pull out the child that has the data in it    
-$data_array = $data_array->requests;
+$data_array = get_all_json_as_array();
 
 #$dump = print_r( $data_array, TRUE );
 
