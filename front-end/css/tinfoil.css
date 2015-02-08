@@ -117,3 +117,35 @@ h4 {
   border-radius: 50%;
 }
 
+
+/* form bits */
+.tinfoilhat_search input{
+    border-width: 0px 0px 1px 0px;
+    border-color: #FF5621;
+    font-style: italic;
+    font-size: 22px;    
+    margin-bottom: 20px;
+
+}
+.tinfoilhat_search input.date2{
+    width: 25px;
+    
+
+}
+.tinfoilhat_search input.date4{
+    width: 50px;
+    
+
+}
+.tinfoilhat_search button{
+    width: 80px;
+    height: 80px;    
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px;  
+    border-width: 0px;  
+    background-color: #2095F2;
+    color: #fff;
+    font-size: 30px;
+    float: right;
+}
