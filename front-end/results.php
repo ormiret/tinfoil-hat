@@ -76,13 +76,13 @@ print_common_header($app_title);
                   <td><?php echo $data_item->body_name ?></td>
                   <td><?php echo $data_item->body_req_id ?></td>
                   <td><?php echo $data_item->docs[0]->text_start ?></td>
-                  <td><a href="<?php echo $data_item->docs[0]->url ?>"><img class="doc_icon" src="css/DOC_Icon.svg"></a></td>                  
+                  <td><a href="<?php echo $data_item->docs[0]->url ?>"><img class="doc_icon" src="css/DOC_Icon.png"></a></td>                  
                   <td><?php echo $data_item->docs[0]->id ?></td>
                   </td>
                   <td><?php echo $data_item->id ?></td>
                   <td><?php echo $data_item->response_date ?></td>
                   <td><?php echo $data_item->submission_date ?></td>
-                  <td><img class="tag_icon" src="css/Tag_Icon.svg"><span class="tag"><?php echo implode("</span>, <span class=\"tag\">", $data_item->tags) ?></span></td>
+                  <td><img class="tag_icon" src="css/Tag_Icon.png"><span class="tag"><?php echo implode("</span>, <span class=\"tag\">", $data_item->tags) ?></span></td>
 
                   <td><?php echo $data_item->type ?></td>                   
                   

@@ -171,3 +171,9 @@ h4 {
 .tt-dropdown-menu{
     background-color: #fff;
 }
+
+/* results */
+.doc_icon{
+    width: 20px;
+    height: 20px;
+}
