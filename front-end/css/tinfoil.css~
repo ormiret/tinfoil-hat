@@ -38,7 +38,7 @@ h4 {
     color: #0c46a0;
 }
 .navbar-brand{
-    padding: 10px 0px 10px 15px;
+    padding: 10px 0px 10px 50px;
 }
 .navbar-brand img{
     max-height: 100%;
