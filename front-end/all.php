@@ -1,7 +1,20 @@
 <?php
 
 
+
 require_once('common.php');
+
+
+
+/*
+http://tinfoil.bodaegl.com/api/all
+*/
+
+$data_array = get_all_json_as_array();
+
+$title_count_array_trim = get_popular_words_as_array($data_array);
+
+#$dump = print_r( $data_array, TRUE );
 
 
 print_common_header($app_title);
