@@ -120,23 +120,21 @@ h4 {
 
 /* form bits */
 .tinfoilhat_search input{
-    border-width: 0px 0px 1px 0px;
+    border-width: 0px 0px 3px 0px;
     border-color: #FF5621;
     font-style: italic;
-    font-size: 22px;    
-    margin-bottom: 20px;
+    font-size: 28px;    
+    margin-bottom: 30px;
 
 }
-.tinfoilhat_search input.date2{
-    width: 25px;
-    
-
-}
-.tinfoilhat_search input.date4{
+.tinfoilhat_search input.day,
+.tinfoilhat_search input.month{
     width: 50px;
-    
-
 }
+.tinfoilhat_search input.year{
+    width: 100px;
+}
+
 .tinfoilhat_search button{
     width: 80px;
     height: 80px;    
@@ -148,7 +146,13 @@ h4 {
     color: #fff;
     font-size: 30px;
     float: right;
+    transition: background-color 0.5s ease;
 }
+.tinfoilhat_search button:hover{
+    background-color: #FF5621;
+}
+
+
 .tt-dropdown-menu{
     background-color: #fff;
 }

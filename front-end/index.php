@@ -15,13 +15,13 @@ print_common_header($long_app_title);
           <div class="tinfoilhat_search">
             <input id="term" type="text" placeholder="Add A Term"> <br/>
             <input id="location" type="text" class="typeahead" placeholder="Add A Location"/> <br/>
-            <input id="from_day" class="date2" type="text" placeholder="DD"/> 
-            <input id="from_month" class="date2" type="text" placeholder="MM"/> 
-            <input id="from_year" class="date4" type="text" placeholder="YYYY"/> 
+            <input id="from_day" class="day" type="text" placeholder="DD"/> 
+            <input id="from_month" class="month" type="text" placeholder="MM"/> 
+            <input id="from_year" class="year" type="text" placeholder="YYYY"/> 
             -
-            <input id="to_day" class="date2" type="text" placeholder="DD"/> 
-            <input id="to_month" class="date2" type="text" placeholder="MM"/> 
-            <input id="to_year" class="date4" type="text" placeholder="YYYY"/> 
+            <input id="to_day" class="day" type="text" placeholder="DD"/> 
+            <input id="to_month" class="month" type="text" placeholder="MM"/> 
+            <input id="to_year" class="year" type="text" placeholder="YYYY"/> 
                
             <button class="glyphicon glyphicon-search"></button>
           </div>
