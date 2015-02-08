@@ -61,3 +61,10 @@ def api_search():
         res  = res.join(Body).filter(or_(*lterms))
     return jsonify({'requests': [r.get_public() for r in res.all()]})
     
+
+@app.route('/api/documents/<int:req_id>')
+def api_document(req_id):
+    db = get_session()
+    docs = db.query(Document).filter(Document.request == req_id).all()
+    docs = [{'id': d.id, 'url': d.url, 'req_id': d.request, 'text':d.text} for d in docs]
+    return jsonify({'documents': docs})
