@@ -121,7 +121,7 @@ function print_common_header($app_title) {
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php echo $_SERVER['REQUEST_URI'] ?>"><?php echo $app_title?></a>
+          <a class="navbar-brand" href="index.php"><img src="css/logo.png" /></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
