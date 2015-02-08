@@ -37,6 +37,12 @@ h3,
 h4 {
     color: #0c46a0;
 }
+.navbar-brand{
+    padding: 0px 0px 0px 0px;
+}
+.navbar-brand img{
+    max-height: 100%;
+}
 
 /*
  * Sidebar
