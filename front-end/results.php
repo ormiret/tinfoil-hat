@@ -57,8 +57,8 @@ print_common_header($app_title);
                   <th>body_name</th>                  
                   <th>body_req_id</th>
                   <th>intro</th>   
-                  <th>doc id</th>                   
                   <th>link</th>                                        
+                  <th>doc id</th>  
                   <th>id</th>
                   <th>resp date</th>
                   <th>sub date</th>
