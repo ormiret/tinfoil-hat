@@ -1,5 +1,6 @@
 from flask import Flask, render_template, jsonify, request, json, redirect
 from db import Body, Request, Document, RequestTag, get_session
+from sqlalchemy import and_
 
 app = Flask(__name__)
 
@@ -14,7 +15,7 @@ def requests():
     return render_template("requests.html", reqs=reqs[0:20])
 
 @app.route('/request/<req_id>')
-def request(req_id):
+def request_details(req_id):
     db = get_session()
     req = db.query(Request).get(req_id)
     docs = db.query(Document).filter(Document.request == req.id).all()
@@ -39,3 +40,21 @@ def api_all():
     db = get_session()
     reqs = db.query(Request).all()
     return jsonify({'requests': [r.get_public() for r in reqs]})
+
+@app.route('/api/search')
+def api_search():
+    db = get_session()
+    sterms = request.args.get('q')
+    if sterms:
+        sterms = sterms.split(',')
+    else:
+        return jsonify({'error': "Search term is required."})
+    locs = request.args.get('l')
+    if locs:
+        locs = locs.split(',')
+    if len(sterms) == 0:
+        return jsonify({"error": "No search terms."})
+    qterms = [Request.title.ilike("%{0}%".format(t)) for t in sterms]
+    res = db.query(Request).filter(and_(*qterms))
+    return jsonify({'requests': [r.get_public() for r in res.all()]})
+    
