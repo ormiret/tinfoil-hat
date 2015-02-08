@@ -4,69 +4,28 @@
 require_once('common.php');
 
 
-print_common_header($app_title);
+print_common_header($long_app_title);
 
 
 ?>
-        <div class="col-sm-3 col-md-2 sidebar">
-          <h3 class="sub-header">Most Popular Words</h3>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>Word</th>
-                  <th>Count</th>
-                </tr>
-              </thead>
-              <tbody>        
-              <?php
-              foreach ($title_count_array_trim as $title_text => $title_count) {
-                ?>
-                <tr>
-                  <td><?php echo $title_text; ?></td>
-                  <td><?php echo $title_count ?></td>  
-                </tr>                         
-                <?php
-              }
-              ?>
-              </tbody>
-            </table>
-          </div>              
-        </div>
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header">Dashboard</h1>
+        <div class="col-md-2"> </div>
+        <div class="col-sm-8">
+          <h1 class="page-header"><?php echo $app_title?></h1>
           
-          <h2 class="sub-header">Section title</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>body</th>
-                  <th>body_req_id</th>
-                  <th>id</th>
-                  <th>title</th>
-                  <th>type</th>
-                </tr>
-              </thead>
-              <tbody>
-              <?php
-              foreach ($data_array as $data_item) {
-                ?>
-                <tr>
-                  <td><?php echo $data_item->body; ?></td>
-                  <td><?php echo $data_item->body_req_id ?></td>
-                  <td><?php echo $data_item->id ?></td>
-                  <td><?php echo $data_item->title ?></td>
-                  <td><?php echo $data_item->type ?></td>    
-                </tr>                         
-                <?php
-              }
-              ?>
-              </tbody>
-            </table>
-          </div>
-        </div>
+          <input id="term" type="text" placeholder="Add A Term"> <br/>
+          <input id="location" type="text" placeholder="Add A Location"/> <br/>
+          <input id="from_day" type="text" placeholder="DD"/> 
+          <input id="from_month" type="text" placeholder="MM"/> 
+          <input id="from_year" type="text" placeholder="YYYY"/> 
+          -
+          <input id="to_day" type="text" placeholder="DD"/> 
+          <input id="to_month" type="text" placeholder="MM"/> 
+          <input id="to_year" type="text" placeholder="YYYY"/> 
+           
+          <span aria-hidden="true" class="glyphicon glyphicon-search"></span>
 
+        </div>
+        <div class="col-md-2"> </div>
 <?php
 
 

@@ -1,8 +1,8 @@
 <?php
 
 # generic common vars
-$app_title = "TinFOIlhat - Freedom of Information Search Engine";
-
+$app_title = "TinFOIlhat";
+$long_app_title = "TinFOIlhat - Freedom of Information Search Engine";
 
 
 # 
