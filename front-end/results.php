@@ -52,10 +52,20 @@ print_common_header($app_title);
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <th>body</th>
-                  <th>body_req_id</th>
-                  <th>id</th>
                   <th>title</th>
+                  <th>body</th>
+                  <th>body_name</th>                  
+                  <th>body_req_id</th>
+                  <th>doc</th>                  
+                  
+                  
+                  <th>id</th>
+                  
+                  <th>resp date</th>
+                  <th>sub date</th>
+                  <th>tags</th>                                                      
+                  
+
                   <th>type</th>
                 </tr>
               </thead>
@@ -63,12 +73,24 @@ print_common_header($app_title);
               <?php
               foreach ($data_array as $data_item) {
                 ?>
-                <tr>
-                  <td><?php echo $data_item->body; ?></td>
-                  <td><?php echo $data_item->body_req_id ?></td>
-                  <td><?php echo $data_item->id ?></td>
+                <tr>            
                   <td><?php echo $data_item->title ?></td>
-                  <td><?php echo $data_item->type ?></td>    
+                  <td><?php echo $data_item->body; ?></td>
+                  <td><?php echo $data_item->body_name ?></td>
+                  <td><?php echo $data_item->body_req_id ?></td>
+                  <td>
+                    <?php echo $data_item->docs[0]->id ?>
+                    <?php echo $data_item->docs[0]->text_start ?>
+                    <?php echo $data_item->docs[0]->url ?>
+                  </td>
+                  <td><?php echo $data_item->id ?></td>
+                  <td><?php echo $data_item->response_date ?></td>
+                  <td><?php echo $data_item->submission_date ?></td>
+                  <td><span class="tag"><?php echo implode("</span><span class=\"tag\">", $data_item->tags) ?></span></td>
+
+                  <td><?php echo $data_item->type ?></td>                   
+                  
+                     
                 </tr>                         
                 <?php
               }
