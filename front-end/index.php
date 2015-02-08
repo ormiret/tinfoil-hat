@@ -54,18 +54,9 @@ print_common_header($long_app_title);
           };
         };
 
-        var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
-          'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
-          'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
-          'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-          'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-          'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-          'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island',
-          'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
-          'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-        ];
+        var states = ['Aberdeen City','Aberdeenshire','Angus','Argyll & Bute','Comhairle nan Eilean Siar','Clackmannanshire','Dumfries and Galloway','Dundee','East Ayrshire','East Dunbartonshire','Edinburgh','East Lothian','East Renfrewshire','Falkirk','Fife','Glasgow','Highland','Inverclyde','Midlothian','Moray','North Ayrshire','North Lanarkshire','Orkney','Perth & Kinross','Renfrewshire','Scottish Borders','Shetland Islands','South Ayrshire','South Lanarkshire','Stirling','West Dunbartonshire','West Lothian'];
 
-        $('#the-basics .typeahead').typeahead({
+        $('#location').typeahead({
           hint: true,
           highlight: true,
           minLength: 1

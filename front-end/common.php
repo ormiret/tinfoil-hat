@@ -88,6 +88,11 @@ function print_common_header($app_title) {
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/tinfoil.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic' rel='stylesheet' type='text/css'>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/typeahead.jquery.js"></script>    
+        
   </head>
 
   <body>
@@ -131,8 +136,10 @@ function print_common_footer() {
     </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
+    
+    
+    
 
   </body>
 </html>
