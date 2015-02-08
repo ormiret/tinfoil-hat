@@ -70,6 +70,7 @@ $title_count_array_trim = array_slice($title_count_array, 0, 20);
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/tinfoil.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,400italic' rel='stylesheet' type='text/css'>
   </head>
 
   <body>
@@ -87,10 +88,9 @@ $title_count_array_trim = array_slice($title_count_array, 0, 20);
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="https://ico.org.uk/for-organisations/guide-to-freedom-of-information/what-is-the-foi-act/" target="_blank">FOI?</a></li>
+            <li><a href="http://codethecity.org/" target="_blank">codethecity.org</a></li>
+            <li><a href="https://github.com/ormiret/tinfoil-hat" target="_blank">On GitHub</a></li>
           </ul>
           <form class="navbar-form navbar-right">
             <input type="text" class="form-control" placeholder="Search...">

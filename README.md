@@ -12,7 +12,12 @@ Work done at http://codethecity.org/
 
 ## Front End
 
+Local dev URL http://localhost/code/ctc3/tinfoil-hat/trunk/front-end
 
+
+
+
+json endpoint: http://tinfoil.bodaegl.com/api/all
 
 
 
