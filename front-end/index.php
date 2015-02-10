@@ -16,13 +16,13 @@ print_common_header($long_app_title);
             <form action="results.php" method="get">
               <input name="term" id="term" type="text" placeholder="Add A Term"> <br/>
               <input name="location" id="location" type="text" class="typeahead" placeholder="Add A Location"/> <br/>
-              <input name="from_day" id="from_day" class="day" type="text" placeholder="DD"/> 
-              <input name="from_month" id="from_month" class="month" type="text" placeholder="MM"/> 
-              <input name="from_year" id="from_year" class="year" type="text" placeholder="YYYY"/> 
-              <span class="date_hyphen">-</span>
-              <input name="to_day" id="to_day" class="day" type="text" placeholder="DD"/> 
-              <input name="to_month" id="to_month" class="month" type="text" placeholder="MM"/> 
-              <input name="to_year" id="to_year" class="year" type="text" placeholder="YYYY"/> 
+<!--               <input name="from_day" id="from_day" class="day" --> <!-- type="text" placeholder="DD"/>  -->
+<!--               <input name="from_month" id="from_month" class="month" --> <!-- type="text" placeholder="MM"/>  -->
+<!--               <input name="from_year" id="from_year" class="year" --> <!-- type="text" placeholder="YYYY"/>  -->
+<!--               <span class="date_hyphen">-</span> -->
+<!--               <input name="to_day" id="to_day" class="day" type="text" --> <!-- placeholder="DD"/>  -->
+<!--               <input name="to_month" id="to_month" class="month" --> <!-- type="text" placeholder="MM"/>  -->
+<!--               <input name="to_year" id="to_year" class="year" --> <!-- type="text" placeholder="YYYY"/>  -->
                
               <button class="glyphicon glyphicon-search"></button>
             </form>
