@@ -6,7 +6,7 @@ from datetime import datetime
 def scrape():
 	html = urllib.request.urlopen("http://www.eastlothian.gov.uk/site/custom_scripts/foi_download_index.php?currentPage=1&itemsPerPage=2000000").read()
 
-	datePattern = r'(January|February|March|April|May|June|July|August|September|November|December) 20[0-9][0-9]$'
+	datePattern = r'(January|February|March|April|May|June|July|August|September|October|November|December) 20[0-9][0-9]$'
 	idPattern = r'^http://www.eastlothian.gov.uk/download/downloads/id/(?[0-9]+)/.*$'
 	soup = BeautifulSoup(html)
 
