@@ -1,6 +1,7 @@
 import urllib.request, urllib.error, urllib.parse, re, urllib.parse
 from bs4 import BeautifulSoup
 from datetime import datetime
+import json
 
 from foi import FOI
 
@@ -38,3 +39,5 @@ foilist = scrape()
 print('Got ', len(foilist), ' results.')
 print('First: ', foilist[0])
 print('last one:', foilist[-1])
+with open('json_outputs/eastlothian.json', 'w') as f:
+        json.dump([f.asdict() for f in foilist], f, indent=2)
