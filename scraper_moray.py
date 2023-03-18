@@ -79,5 +79,5 @@ request_index = scrape(url)
 
 request_json = json.dumps([obj.__dict__ for obj in request_index])
 
-with open('json_outputs/moray_foi_json.txt', 'w') as file:
+with open('json_outputs/moray_foi.json', 'w') as file:
 	file.write(request_json)
