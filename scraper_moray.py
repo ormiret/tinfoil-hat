@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup 
 import json
 
+from foi import FOI
+
 
 def scrape(url):
 	home = 'http://www.moray.gov.uk'
@@ -27,17 +29,19 @@ def scrape(url):
 		for row in rows:
 			row_data = row.find_all("td")
 			temp_date = row_data[0].contents[0]
+			tags = ["moray"]
 			if temp_date != " ":		# Carries date down table until new date
 				date_tracker = temp_date
 			date = date_tracker
 			if len(row_data) > 2:  # IJB table has no department column
 				department = row_data[2].contents[0]
+				tags.append(department.lower())
 			else:
 				department = "Integrated Joint Board"
 			name, number, request_url = process_link(row_data, home)
 
-			request_list.append(FOIRequest(date, name, department, request_url, number))
-			print(name)
+			request_list.append(FOI(last_updated_at=date, title=name, tags=tags,
+						   link=request_url, body_id=number))
 
 	return request_list
 
@@ -61,18 +65,6 @@ def process_link(row_data, home):
 		request_url = "#"
 
 	return name, number, request_url
-
-
-class FOIRequest:
-	def __init__(self, date, name, department, request_url, request_number):
-		self.date = date.strip().replace('\u00a0', '')
-		self.name = name.strip().replace('\u00a0', '')
-		self.department = department.strip().replace('\u00a0', '')
-		self.url = request_url.strip().replace('\u00a0', '')
-		self.number = request_number.strip().replace('\u00a0', '')
-
-	def __repr__(self):
-		return f"[Dpt:{self.department}] {self.name}({self.number})[{self.date}]: {self.url}"
 
 
 url = 'http://www.moray.gov.uk/moray_standard/page_62338.html'
