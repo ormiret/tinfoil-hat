@@ -1,12 +1,12 @@
 from bs4 import BeautifulSoup
-import urllib2
+import urllib.request, urllib.error, urllib.parse
 from datetime import datetime as dt
 # import mysql.connector
 
-from db import get_session, Body, Request, Document, RequestTag
+from .db import get_session, Body, Request, Document, RequestTag
 
 def scrape(url, year):
-	html = urllib2.urlopen(url).read()
+	html = urllib.request.urlopen(url).read()
 	soup = BeautifulSoup(html)
 	tags1 = [x.lower().strip() for x in soup.title.string.split(" and ")]
 	tags = []
