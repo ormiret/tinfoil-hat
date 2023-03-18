@@ -36,7 +36,7 @@ def scrape(url):
 				department = "Integrated Joint Board"
 			name, number, request_url = process_link(row_data, home)
 
-			request_list.append(FOIRequest(date, name, department, request_url, number.strip()))
+			request_list.append(FOIRequest(date, name, department, request_url, number))
 			print(name)
 
 	return request_list
@@ -65,11 +65,11 @@ def process_link(row_data, home):
 
 class FOIRequest:
 	def __init__(self, date, name, department, request_url, request_number):
-		self.date = date
-		self.name = name
-		self.department = department
-		self.url = request_url
-		self.number = request_number
+		self.date = date.strip().replace('\u00a0', '')
+		self.name = name.strip().replace('\u00a0', '')
+		self.department = department.strip().replace('\u00a0', '')
+		self.url = request_url.strip().replace('\u00a0', '')
+		self.number = request_number.strip().replace('\u00a0', '')
 
 	def __repr__(self):
 		return f"[Dpt:{self.department}] {self.name}({self.number})[{self.date}]: {self.url}"
