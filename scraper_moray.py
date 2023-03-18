@@ -36,7 +36,7 @@ def scrape(url):
 				department = "Integrated Joint Board"
 			name, number, request_url = process_link(row_data, home)
 
-			request_list.append(FOIRequest(date, name, department, request_url, number))
+			request_list.append(FOIRequest(date, name, department, request_url, number.strip()))
 			print(name)
 
 	return request_list
