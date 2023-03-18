@@ -37,6 +37,7 @@ def scrape(url):
 			name, number, request_url = process_link(row_data, home)
 
 			request_list.append(FOIRequest(date, name, department, request_url, number))
+			print(name)
 
 	return request_list
 
@@ -77,7 +78,7 @@ class FOIRequest:
 url = 'http://www.moray.gov.uk/moray_standard/page_62338.html'
 request_index = scrape(url)
 
-request_json = json.dumps([obj.__dict__ for obj in request_index])
+request_json = json.dumps([obj.__dict__ for obj in request_index], indent=2)
 
 with open('json_outputs/moray_foi.json', 'w') as file:
 	file.write(request_json)
