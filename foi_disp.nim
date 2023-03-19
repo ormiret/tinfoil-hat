@@ -20,7 +20,7 @@ proc loadFOIs(httpStatus: int, resp: cstring) =
       if fj["initial_request_at"].kind == JNull: none(DateTime)
       else: some(fj["initial_request_at"].getStr.parse(isoFormat))
     let last_updated_at =
-      if fj["last_updated-at"].kind == JNull: none(DateTime)
+      if fj["last_updated_at"].kind == JNull: none(DateTime)
       else: some(fj["last_updated_at"].getStr.parse(isoFormat))
     let tags = collect(newSeq):
       for tj in fj["tags"]:

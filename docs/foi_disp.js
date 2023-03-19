@@ -13393,7 +13393,7 @@ function loadFOIs_15120081(httpStatus_15120083, resp_15120084) {
               
               var initial_request_at_15120214 = nimCopy(null, Tmp6, NTI15120100);
               F.line = 22;
-              if ((HEX5BHEX5D_11425503(fj_15120087, makeNimstrLit("last_updated-at")).kind == 0)) {
+              if ((HEX5BHEX5D_11425503(fj_15120087, makeNimstrLit("last_updated_at")).kind == 0)) {
               Tmp7 = none_15120094();
               }
               else {
