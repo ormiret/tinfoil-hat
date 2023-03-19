@@ -13482,7 +13482,7 @@ function loadFOIs_15120081(httpStatus_15120083, resp_15120084) {
 var F={procname:"module foi_disp",prev:framePtr,filename:"/home/ormiret/Documents/tinfoil-hat/foi_disp.nim",line:0};
 framePtr = F;
 F.line = 40;
-ajaxGet_12985237("first1000.json", [], loadFOIs_15120081, true, kxi_12282284[0]);
+ajaxGet_12985237("first_1000.json", [], loadFOIs_15120081, true, kxi_12282284[0]);
 framePtr = F.prev;
 var F={procname:"module foi_disp",prev:framePtr,filename:"/home/ormiret/Documents/tinfoil-hat/foi_disp.nim",line:0};
 framePtr = F;

@@ -37,7 +37,7 @@ proc loadFOIs(httpStatus: int, resp: cstring) =
   res = buildHtml():
       text fmt"Added {FOIs.len} FOIs"
 
-ajaxGet("/first1000.json", @[], loadFOIs)
+ajaxGet("first_1000.json", @[], loadFOIs)
 
 proc render(): VNode =
   result = buildHtml(tdiv(class="foi-wrapper")):
