@@ -57,7 +57,7 @@ proc render(): VNode =
             text fmt"Request submitted on {ts}"
         p:
           for t in f.tags:
-            text t
+            text fmt"{t} "
 
   
 setRenderer render

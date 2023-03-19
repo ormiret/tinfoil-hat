@@ -13613,17 +13613,17 @@ function setAttr_12060105(n_12060107, key_12060108, val_12060109) {
         F.line = 241;
         var i_12060138 = 0;
         F.line = 39;
-        var colontmp__15190307 = 0;
+        var colontmp__15195094 = 0;
         F.line = 241;
-        colontmp__15190307 = subInt((n_12060107.attrs).length, 2);
+        colontmp__15195094 = subInt((n_12060107.attrs).length, 2);
         F.line = 56;
-        var res_15190308 = 0;
+        var res_15195095 = 0;
         L2: do {
           F.line = 57;
             L3: while (true) {
-            if (!(res_15190308 <= colontmp__15190307)) break L3;
+            if (!(res_15195095 <= colontmp__15195094)) break L3;
               F.line = 241;
-              i_12060138 = res_15190308;
+              i_12060138 = res_15195095;
               if ((n_12060107.attrs[chckIndx(i_12060138, 0, (n_12060107.attrs).length-1)] == key_12060108)) {
               F.line = 243;
               n_12060107.attrs[chckIndx(addInt(i_12060138, 1), 0, (n_12060107.attrs).length-1)] = val_12060109;
@@ -13632,7 +13632,7 @@ function setAttr_12060105(n_12060107, key_12060108, val_12060109) {
               }
               
               F.line = 59;
-              res_15190308 = addInt(res_15190308, 2);
+              res_15195095 = addInt(res_15195095, 2);
             }
         } while(false);
       } while(false);
@@ -14013,19 +14013,19 @@ function format_14975059(dt_14975061, f_14975062, loc_14975063) {
               F.line = 1997;
               var i_14995421 = 0;
               F.line = 77;
-              var res_15190316 = 1;
+              var res_15195103 = 1;
               L4: do {
                 F.line = 78;
                   L5: while (true) {
-                  if (!(res_15190316 <= ((len_14995215)|0))) break L5;
+                  if (!(res_15195103 <= ((len_14995215)|0))) break L5;
                     F.line = 1997;
-                    i_14995421 = res_15190316;
+                    i_14995421 = res_15195103;
                     F.line = 1998;
                     idx_14995202 = addInt(idx_14995202, 1);
                     F.line = 1999;
                     addChar(result_14975064[0], f_14975062.patterns[chckIndx(idx_14995202, 0, (f_14975062.patterns).length-1)]);;
                     F.line = 80;
-                    res_15190316 = addInt(res_15190316, 1);
+                    res_15195103 = addInt(res_15195103, 1);
                   }
               } while(false);
             } while(false);
@@ -14415,15 +14415,15 @@ function render_15150490() {
       F.line = 47;
       var f_15165214 = null;
       F.line = 199;
-      var i_15190303 = 0;
+      var i_15195090 = 0;
       F.line = 200;
-      var L_15190304 = (FOIs_15116031[0]).length;
+      var L_15195091 = (FOIs_15116031[0]).length;
       L2: do {
         F.line = 201;
           L3: while (true) {
-          if (!(i_15190303 < L_15190304)) break L3;
+          if (!(i_15195090 < L_15195091)) break L3;
             F.line = 47;
-            f_15165214 = FOIs_15116031[0][chckIndx(i_15190303, 0, (FOIs_15116031[0]).length-1)];
+            f_15165214 = FOIs_15116031[0][chckIndx(i_15195090, 0, (FOIs_15116031[0]).length-1)];
             F.line = 48;
             var tmp_15150497 = tree_12120445(23, []);
             F.line = 48;
@@ -14477,20 +14477,26 @@ function render_15150490() {
               var t_15190214 = null;
               var t_15190214_Idx = 0;
               F.line = 199;
-              var i_15190299 = 0;
+              var i_15195086 = 0;
               F.line = 200;
-              var L_15190300 = (f_15165214.tags).length;
+              var L_15195087 = (f_15165214.tags).length;
               L5: do {
                 F.line = 201;
                   L6: while (true) {
-                  if (!(i_15190299 < L_15190300)) break L6;
+                  if (!(i_15195086 < L_15195087)) break L6;
                     F.line = 59;
-                    t_15190214 = f_15165214.tags; t_15190214_Idx = chckIndx(i_15190299, 0, (f_15165214.tags).length-1);
+                    t_15190214 = f_15165214.tags; t_15190214_Idx = chckIndx(i_15195086, 0, (f_15165214.tags).length-1);
                     F.line = 60;
-                    add_12110072(tmp_15150501, text_12120582(t_15190214[t_15190214_Idx]));
+                    F.line = 60;
+                    var fmtRes_15190215 = [mnewString(0)];
+                    F.line = 60;
+                    formatValue_11855080(fmtRes_15190215, 0, t_15190214[t_15190214_Idx], []);
+                    F.line = 60;
+                    fmtRes_15190215[0].push.apply(fmtRes_15190215[0], makeNimstrLit(" "));;
+                    add_12110072(tmp_15150501, text_12120582(fmtRes_15190215[0]));
                     F.line = 203;
-                    i_15190299 = addInt(i_15190299, 1);
-                    if (!(((f_15165214.tags).length == L_15190300))) {
+                    i_15195086 = addInt(i_15195086, 1);
+                    if (!(((f_15165214.tags).length == L_15195087))) {
                     F.line = 204;
                     failedAssertImpl_1305480(makeNimstrLit("/usr/lib/nim/system/iterators.nim(204, 11) `len(a) == L` the length of the seq changed while iterating over it"));
                     }
@@ -14501,8 +14507,8 @@ function render_15150490() {
             F.line = 60;
             add_12110072(tmp_15150495, tmp_15150501);
             F.line = 203;
-            i_15190303 = addInt(i_15190303, 1);
-            if (!(((FOIs_15116031[0]).length == L_15190304))) {
+            i_15195090 = addInt(i_15195090, 1);
+            if (!(((FOIs_15116031[0]).length == L_15195091))) {
             F.line = 204;
             failedAssertImpl_1305480(makeNimstrLit("/usr/lib/nim/system/iterators.nim(204, 11) `len(a) == L` the length of the seq changed while iterating over it"));
             }
