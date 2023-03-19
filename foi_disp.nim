@@ -14,7 +14,7 @@ var res = buildHtml:
   
 proc loadFOIs(httpStatus: int, resp: cstring) =
   let FOIj = parseJson($resp)
-  let isoFormat = "yyyy-mm-dd'T'HH:MM:ss"
+  let isoFormat = "yyyy-MM-dd'T'HH:mm:ss"
   for fj in FOIj:
     let initial_request_at =
       if fj["initial_request_at"].kind == JNull: none(DateTime)
@@ -48,11 +48,11 @@ proc render(): VNode =
         h3: a(href=f.link):
           text f.title
         if f.last_updated_at.isSome:
-          let ts = f.last_updated_at.get.format("yyyy-mm-dd")
+          let ts = f.last_updated_at.get.format("yyyy-MM-dd")
           p:
             text fmt"Last Updated at {ts}"
         if f.initial_request_at.isSome:
-          let ts = f.initial_request_at.get.format("yyyy-mm-dd")
+          let ts = f.initial_request_at.get.format("yyyy-MM-dd")
           p:
             text fmt"Request submitted on {ts}"
         p:

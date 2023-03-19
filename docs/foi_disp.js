@@ -1699,7 +1699,7 @@ var ConstSet16 = setConstr([48, 57]);
 var ConstSet17 = setConstr([48, 57]);
 var ConstSet18 = setConstr([48, 57]);
 var ConstSet19 = setConstr([65, 90], [97, 122]);
-    var f2_15170038 = {patterns: [22, 31, 1, 45, 9, 31, 1, 45, 1], formatStr: makeNimstrLit("yyyy-mm-dd")};
+    var f2_15170038 = {patterns: [22, 31, 1, 45, 11, 31, 1, 45, 1], formatStr: makeNimstrLit("yyyy-MM-dd")};
 if (!Math.trunc) {
   Math.trunc = function(v) {
     v = +v;
@@ -13352,7 +13352,7 @@ function loadFOIs_15120081(httpStatus_15120083, resp_15120084) {
     F.line = 16;
     var FOIj_15120085 = parseJson_11730257(cstrToNimstr(resp_15120084));
     F.line = 17;
-    var isoFormat_15120086 = makeNimstrLit("yyyy-mm-dd\'T\'HH:MM:ss");
+    var isoFormat_15120086 = makeNimstrLit("yyyy-MM-dd\'T\'HH:mm:ss");
     L1: do {
       F.line = 18;
       var fj_15120087 = null;
