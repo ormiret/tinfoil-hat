@@ -2,7 +2,9 @@
 
 This is an app to collect responses from the disclosure logs that some public bodies publish (and What Do They Know) and make that data available in a way that it can be searched and analysed. 
 
-We previously had a web front end for the data - code for that is in [old](https://github.com/ormiret/tinfoil-hat/tree/old) branch. 
+We previously had a web front end for the data - code for that is in [old](https://github.com/ormiret/tinfoil-hat/tree/old) branch.
+
+Now have a (very rough) [frontend](http://ormiret.github.io/tinfoil-hat/) listing the FOIs we have collected.
 
 ## By
 
@@ -18,9 +20,11 @@ We previously had a web front end for the data - code for that is in [old](https
 
 ## Using
 
-Python
+Python for scraping/processing
 
-### Previously using
+[nim](https://nim-lang.org/) + [karax](https://github.com/karaxnim/karax) for frontend
+
+### Previous incarnations used
 
 PHP
 
