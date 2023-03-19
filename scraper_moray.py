@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup 
 import json
+from datetime import datetime
 
 from foi import FOI
 
@@ -32,7 +33,27 @@ def scrape(url):
 			tags = ["moray"]
 			if temp_date != " ":		# Carries date down table until new date
 				date_tracker = temp_date
-			date = date_tracker
+
+			date = None
+
+			if date_tracker.strip():
+				try:
+					date = datetime.strptime(date_tracker, "%d-%m-%y")
+				except ValueError:
+					try:
+						date = datetime.strptime(date_tracker, "%d-%m-%Y")
+					except ValueError:
+						try:
+							date = datetime.strptime(date_tracker, "%d.%m.%y")
+						except ValueError:
+							try:
+								date = datetime.strptime(date_tracker, "%d.%m.%Y")
+							except ValueError:
+								try:
+									date = datetime.strptime(date_tracker, "%d/%m/%y")
+								except ValueError:
+									date = datetime.strptime(date_tracker, "%d/%m/%Y")
+
 			if len(row_data) > 2:  # IJB table has no department column
 				department = row_data[2].contents[0]
 				tags.append(department.lower())
@@ -70,7 +91,7 @@ def process_link(row_data, home):
 url = 'http://www.moray.gov.uk/moray_standard/page_62338.html'
 request_index = scrape(url)
 
-request_json = json.dumps([obj.__dict__ for obj in request_index], indent=2)
+request_json = json.dumps([obj.asdict() for obj in request_index], indent=2)
 
 with open('json_outputs/moray_foi.json', 'w') as file:
 	file.write(request_json)
