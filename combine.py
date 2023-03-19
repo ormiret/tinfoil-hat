@@ -2,7 +2,7 @@ import json
 
 full = []
 
-for fname in ["aberdeen.json", "eastlothian.json", "moray_foi.json"]:
+for fname in ["aberdeen.json", "eastlothian.json", "eilean_siar.json", "moray_foi.json"]:
     with open(f"json_outputs/{fname}") as f:
         full += json.load(f)
 
