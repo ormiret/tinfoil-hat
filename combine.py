@@ -6,7 +6,13 @@ for fname in ["aberdeen.json", "eastlothian.json", "moray_foi.json"]:
     with open(f"json_outputs/{fname}") as f:
         full += json.load(f)
 
-full.sort(key=lambda x: x['last_updated_at'], reverse=True)
+def get_updated(x):
+    if v := x["last_updated_at"]:
+        return v
+    else:
+        return ""
+
+full.sort(key=get_updated, reverse=True)
 
 with open("json_outputs/full.json", "w") as f:
     json.dump(full, f, indent=2)

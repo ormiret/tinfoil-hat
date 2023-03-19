@@ -40,4 +40,4 @@ print('Got ', len(foilist), ' results.')
 print('First: ', foilist[0])
 print('last one:', foilist[-1])
 with open('json_outputs/eastlothian.json', 'w') as f:
-        json.dump([f.asdict() for f in foilist], f, indent=2)
+        json.dump([f.serializable() for f in foilist], f, indent=2)

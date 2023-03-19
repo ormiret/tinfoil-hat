@@ -49,4 +49,4 @@ if __name__ == "__main__":
         print()
         foilist += yfoilist
     with open('json_outputs/aberdeen.json', 'w') as f:
-            json.dump([f.asdict() for f in foilist], f, indent=2)
+            json.dump([f.serializable() for f in foilist], f, indent=2)

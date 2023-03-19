@@ -14,8 +14,8 @@ class FOI:
     wdtk_id: str  = "" # What Do They Know ID
     body_id: str = "" # ID from the body FOI is sent to  
 
-    def asdict(self):
-        d = asdict(self)
+    def serializable(self):
+        d = self.__dict__
         if self.last_updated_at:
             d["last_updated_at"] = self.last_updated_at.isoformat()
         if self.initial_request_at:
